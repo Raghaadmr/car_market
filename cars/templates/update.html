@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Update{% endblock title %}
+
+{% block content %}
+<form action="{% url 'car-update' car_obj.id %}" method="POST" enctype="multipart/form-data">
+  <div class="album py-5" style="background-color:#04010f">
+   <div class="container" style = " background-color: #04010f">
+   <section class="jumbotron text-center" style ="background-color:#1e2021">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <input type="submit"  class="btn btn-lg btn-outline-secondary" value="Update">
+</form>
+{% endblock content %}

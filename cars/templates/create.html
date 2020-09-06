@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Create{% endblock title %}
+
+{% block content %}
+
+<form action="{% url 'car-create' %}" method="POST" enctype="multipart/form-data">
+  <div class="album py-5" style="background-color:#04010f">
+   <div class="container" style = " background-color: #04010f">
+   <section class="jumbotron text-center" style ="background-color:#1e2021">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <input type="submit" value="Create">
+</form>
+{% endblock content %}
